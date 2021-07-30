@@ -15,7 +15,7 @@ body {
   Base Layout Styles
 ==================================== */
 
-img {
+.menu-icon {
 	height: 20px;
 	width: 30px;
 	margin-right: 10%;
@@ -113,7 +113,7 @@ img {
 
 @media (min-width: 800px) {
 
-	img {
+	.menu-icon {
 		display: none;
 	}
 

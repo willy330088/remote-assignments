@@ -6,4 +6,4 @@ function max(numbers) {
         }
     }
     return max;
-}
+};

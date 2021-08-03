@@ -1,0 +1,167 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+	box-sizing:border-box;
+}
+
+body {
+	color: #3a3a3a;
+	font-family: Georgia, serif;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+.menu-icon {
+	height: 20px;
+	width: 30px;
+	margin-right: 10%;
+}
+
+.main-header {
+	background: #eeeeee;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 50px;
+}
+
+.main-nav {
+	display: flex;
+	align-items: center;
+	margin: 0 30px;
+}
+
+.name {
+	margin: 0;
+	padding: 10px 25px
+}
+
+.main-nav,
+.name {
+	font-size: 1rem;
+}
+
+.item {
+	padding: 10px 25px;
+	display: none;
+}
+
+.banner {
+	background: #cbddef;
+	margin: 0;
+	padding: 50px;
+	text-align: center;
+}
+
+.container {
+	width: 90%;
+	margin: auto;
+}
+
+.section {
+	text-align: center;
+}
+
+.content {
+	background: #8799ab;
+	text-align: center;
+	margin: 20px;
+	height: 170px;
+	padding: 15px;
+}
+
+.content-1 {
+	margin-top: 0;
+}
+
+.content-h {
+	display: none;
+}
+
+.action {
+	background: #dceeff;
+	height:50px;
+	width: 150px;
+	margin: auto;
+	text-align: center;
+	line-height: 50px;
+	margin-bottom: 20px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  padding-top: 0px; 
+}
+
+.sidebar div {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #111;
+  display: block;
+  margin-bottom:20px;
+  margin-top: 10px;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  font-size: 30px;
+  right: 10px;
+  text-decoration: none;
+  color: #111;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 500px) {
+
+ 	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.content {
+		text-align: center;
+		margin: 10px;
+		height: 170px;
+		padding: 15px;
+		flex-grow: 1;
+	}
+	.action {
+		margin-top: 20px;
+	}
+}
+
+@media (min-width: 800px) {
+
+	.menu-icon {
+		display: none;
+	}
+
+	.item {
+		padding: 10px 25px;
+		display: block;
+	}
+
+}
+
+@media (min-width: 1200px) {
+
+	.wrapper {
+		max-width: 1200px;
+		margin: auto;
+	}
+}

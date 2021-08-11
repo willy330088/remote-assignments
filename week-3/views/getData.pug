@@ -1,0 +1,9 @@
+extends layout.pug
+
+block content
+    if !answer 
+        h2 Lack of Parameter
+    else if wrong
+        h2 Wrong Parameter
+    else 
+        h2= answer

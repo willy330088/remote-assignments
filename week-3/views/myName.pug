@@ -1,0 +1,10 @@
+extends layout.pug
+
+block content 
+    if name
+        h2 Welcome, #{name}!
+    else 
+        form(action='/trackName')
+            label(for='name') Please enter your name: 
+                input(type='text', name='name') 
+            button(type='submit') Submit

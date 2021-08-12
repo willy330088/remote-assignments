@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Triangular Number Calculator</title>
     <style>
-        .ten {
+        .number {
             display: inline;
         }
     </style>
     <script>
-        var xhr = new XMLHttpRequest();
+        const xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById('answer-10').innerHTML = xhr.responseXML.getElementsByTagName('h2')[0].innerHTML;
@@ -19,6 +19,20 @@
         xhr.open('GET', 'http://localhost:3000/getData?number=10');
         xhr.responseType = "document";
         xhr.send();
+
+        function calculate() {
+            const xhr2 = new XMLHttpRequest();
+            xhr2.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById('answer-choose').innerHTML = xhr2.responseXML.getElementsByTagName('h2')[0].innerHTML;
+                }
+            };
+            xhr2.open('GET', 'http://localhost:3000/getData?number=' + document.getElementById("number").value);
+            xhr2.responseType = "document";
+            xhr2.send();
+            const content = document.getElementById("form");
+            content.style.display = 'none';
+        }
     </script>
 </head>
 
@@ -28,19 +42,24 @@
     </header>
 
     <div>
-        <h3 class="ten">Answer of number = 10: </h3>
-        <h3 class="ten" id='answer-10'></h3>
+        <h3 class="number"></h3>
+        <h3 class="number" id='answer-10'></h3>
     </div>
 
     <br>
 
-    <form action="../getData">
+    <form action="" id="form">
         <strong>
             <label for="number">Enter a number to calculate:</label>
             <input type="text" id="number" name="number"><br><br>
-            <input type="submit" value="Submit">
+            <button type="button" onclick="calculate()">Calculate</button>
         </strong>
     </form>
+
+    <div>
+        <h3 class="number"></h3>
+        <h3 class="number" id='answer-choose'></h3>
+    </div>
 
     <footer>
         <p>An app to speed up your Triangular Number calculation</p>

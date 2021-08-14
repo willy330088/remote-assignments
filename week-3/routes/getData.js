@@ -6,7 +6,9 @@ router.get('/', (req, res) => {
     let wrong;
     let targetNumber;
 
-    if (isNaN(req.query.number) || parseInt(req.query.number) < 0) {
+    if (!req.query.number) {
+        answer = false;
+    } else if (isNaN(req.query.number) || parseInt(req.query.number) < 0) {
         answer = true;
         wrong = true;
     } else {

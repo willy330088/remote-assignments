@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax & Callback Practice</title>
+
+    <script>
+        function ajax(src, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', src);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    callback(xhr.responseText)
+                }
+            };
+        };
+
+        function render(data) {
+            const product = JSON.parse(data);
+            for (let i = 0; i < product.length; i++) {
+                let ul = document.getElementsByTagName('ul')[0];
+                let li = document.createElement('li');
+                let h2 = document.createElement('h2');
+                let h3 = document.createElement('h3');
+                let p = document.createElement('p');
+                h2.textContent = product[i].name;
+                h3.textContent = `Price: ${product[i].price}`;
+                p.textContent = product[i].description;
+                ul.appendChild(li);
+                li.appendChild(h2);
+                li.appendChild(h3);
+                li.appendChild(p);
+            };
+        };
+
+        ajax("http://13.230.176.178:4000/api/1.0/remote-w4-data", function (response) {
+            render(response);
+        });
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Ajax & Callback Practice</h1>
+    </header>
+
+    <div>
+        <ul></ul>
+    </div>
+
+</body>
+
+</html>

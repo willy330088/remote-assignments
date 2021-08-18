@@ -1,29 +1,20 @@
-const title = React.createElement(
-    'p',
-    { class: 'name' },
-    'Website Title/Logo'
-);
+const Header = () => {
+    return (
+        <header className="main-header">
+            <p className="name">Website Title/Logo</p>
+        </header>
+    );
+}
 
-const item = React.createElement(
-    'li',
-    { class: 'item' },
-    'Item 1'
-)
-
-const nav = React.createElement(
-    'ul',
-    { class: 'main-nav' },
-    item
-);
-
-const header = React.createElement(
-    'header',
-    { class: "main-header" },
-    title,
-    nav
-);
+const App = () => {
+    return (
+        <div>
+            <Header />
+        </div>
+    )
+}
 
 ReactDOM.render(
-    header,
+    <App />,
     document.getElementById('root')
 );
